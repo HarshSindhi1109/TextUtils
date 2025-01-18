@@ -40,6 +40,7 @@ function App() {
         <Alert alert={alert} />
         <Routes>
           <Route
+            exact
             path="/"
             element={
               <TextForm
@@ -49,7 +50,7 @@ function App() {
               />
             }
           />
-          <Route path="/about" element={<About />} />
+          <Route exact path="/about" element={<About />} />
         </Routes>
       </Router>
     </>
