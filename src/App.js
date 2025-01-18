@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './Componenets/Navbar.js';
 import TextForm from './Componenets/TextForm.js';
@@ -31,16 +32,25 @@ function App() {
     }
   };
   return (
-    <>
+    <Router>
+      {' '}
+      {/* ✅ Wrap everything inside Router */}
       <Navbar title="Text Utils" toggleTheme={toggleTheme} />
       <Alert alert={alert} />
-      {/* <TextForm
-        heading="Enter Your Text Below"
-        showAlert={showAlert}
-        theme={theme}
-      /> */}
-      <About />
-    </>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <TextForm
+              heading="Enter Your Text Below"
+              showAlert={showAlert}
+              theme={theme}
+            />
+          }
+        />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 
