@@ -32,25 +32,27 @@ function App() {
     }
   };
   return (
-    <Router>
-      {' '}
-      {/* ✅ Wrap everything inside Router */}
-      <Navbar title="Text Utils" toggleTheme={toggleTheme} />
-      <Alert alert={alert} />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <TextForm
-              heading="Enter Your Text Below"
-              showAlert={showAlert}
-              theme={theme}
-            />
-          }
-        />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        {' '}
+        {/* ✅ Wrap everything inside Router */}
+        <Navbar title="Text Utils" toggleTheme={toggleTheme} />
+        <Alert alert={alert} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <TextForm
+                heading="Enter Your Text Below"
+                showAlert={showAlert}
+                theme={theme}
+              />
+            }
+          />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
