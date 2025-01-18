@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './Componenets/Navbar.js';
 import TextForm from './Componenets/TextForm.js';
 import Alert from './Componenets/Alert.js';
+import About from './Componenets/About.js';
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -33,11 +34,12 @@ function App() {
     <>
       <Navbar title="Text Utils" toggleTheme={toggleTheme} />
       <Alert alert={alert} />
-      <TextForm
+      {/* <TextForm
         heading="Enter Your Text Below"
         showAlert={showAlert}
         theme={theme}
-      />
+      /> */}
+      <About />
     </>
   );
 }
